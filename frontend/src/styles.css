@@ -166,16 +166,28 @@ h1 {
 .barra {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 1.25rem;
 }
 
 .filtros,
-.consulta-id {
+.consulta-id,
+.barra-acoes {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.filtros {
+  flex-wrap: nowrap;
+}
+
+.barra-acoes {
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .barra input,
@@ -334,6 +346,15 @@ h1 {
 }
 
 @media (max-width: 760px) {
+  .barra {
+    flex-wrap: wrap;
+  }
+
+  .filtros,
+  .barra-acoes {
+    flex-wrap: wrap;
+  }
+
   .tabela thead {
     display: none;
   }

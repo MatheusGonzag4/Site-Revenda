@@ -171,9 +171,6 @@ export default function App() {
               : "Cadastre, consulte e atualize os produtos que você revende."}
           </p>
         </div>
-        <button type="button" className="botao" onClick={() => setForm({ produto: null })}>
-          Novo produto
-        </button>
       </header>
 
       {!loja && (
@@ -220,19 +217,24 @@ export default function App() {
             <option value="Vendido">Vendido</option>
           </select>
         </div>
-        <form className="consulta-id" onSubmit={consultarPorId}>
-          <input
-            type="number"
-            min="1"
-            placeholder="ID do produto"
-            aria-label="ID do produto"
-            value={idConsulta}
-            onChange={(ev) => setIdConsulta(ev.target.value)}
-          />
-          <button type="submit" className="botao secundario">
-            Consultar ID
+        <div className="barra-acoes">
+          <form className="consulta-id" onSubmit={consultarPorId}>
+            <input
+              type="number"
+              min="1"
+              placeholder="ID do produto"
+              aria-label="ID do produto"
+              value={idConsulta}
+              onChange={(ev) => setIdConsulta(ev.target.value)}
+            />
+            <button type="submit" className="botao secundario">
+              Consultar ID
+            </button>
+          </form>
+          <button type="button" className="botao" onClick={() => setForm({ produto: null })}>
+            Novo produto
           </button>
-        </form>
+        </div>
       </section>
 
       <main>
