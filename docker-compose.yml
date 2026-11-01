@@ -1,0 +1,13 @@
+# Sobe só o Redis:  docker compose up -d
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: revenda-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-dados:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+volumes:
+  redis-dados:
